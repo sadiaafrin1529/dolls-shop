@@ -9,27 +9,31 @@ const Gallery = () => {
         <div className='mx-auto mt-5 mb-5 '>
             <Container>
                 <Row>
+                <Col className=' '>
+                    <h1 className='mt-5 text-center'>Gallery</h1>
+                    <p>A doll is a model typically of a human or humanoid character, often used as a toy for children.Dolls at Argos. Explore baby dolls, princess toys & much more. </p>
+                    </Col>
 
-                    <Col >
-                        <Card className='border border-bottom-0 border-danger' style={{ width: '280px', height: '280px' }}>
-                            <Card.Img src={doll2} />
+                    
+                    <Col className='  mb-3 '>
+                        <Card className='border border border-danger' style={{ width: '280px', height: '280px' }}>
+                            <Card.Img style={{ width: '250px', height: '250px' }} src={doll2} />
                         </Card>
 
 
                         <Card className='mx-5 border border-danger' style={{ width: '280px', height: '280px' }}>
-                            <Card.Img src={doll} />
+                            <Card.Img style={{ width: '250px', height: '250px' }} src={doll} />
                         </Card>
 
 
 
                         <Card className='border border-danger' style={{ width: '280px', height: '280px' }}>
-                            <Card.Img src={doll1} />
+                            <Card.Img style={{ width: '250px', height: '200px' }} src={doll1} />
 
                         </Card>
                     </Col>
-                    <Col>
-                    <h1 className='mt-5'>Gallery</h1>
-                    </Col>
+                    
+                    
                 </Row>
             </Container>
         </div>
