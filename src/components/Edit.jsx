@@ -8,7 +8,7 @@ const Edit = () => {
     const { _id, img, name, sellername, email, price, quantity, rating, description, category } = loader;
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch(`http://localhost:5000/addtoys/${_id}`,{
+        fetch(`https://dolls-toy-server-three.vercel.app/addtoys/${_id}`,{
             method: 'PUT',
             headers:{
                 "Content-Type": "application/json"

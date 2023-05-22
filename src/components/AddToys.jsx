@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container, FloatingLabel } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { AuthContext } from './AuthProvider';
 import Swal from 'sweetalert2';
+import { AuthContext } from './AuthProvider';
 const AddToys = () => {
   const [users, setUsers] = useState([]);
   const [updated, setUpdated] = useState({})
   const {user} = useContext(AuthContext)
   // useEffect(() => {
-  //   fetch('http://localhost:5000/addtoys')
+  //   fetch('https://dolls-toy-server-three.vercel.app/addtoys')
   //     .then(res => res.json())
   //     .then(data => setUsers(data))
   // }, [])
@@ -47,7 +47,7 @@ const handleAddToys = e =>{
       price,
   }
 console.log(addToys)
-fetch('http://localhost:5000/addtoys', {
+fetch('https://dolls-toy-server-three.vercel.app/addtoys', {
 method : 'POST',
 headers : {
   'Content-Type': 'application/json'

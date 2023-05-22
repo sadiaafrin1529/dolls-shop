@@ -1,16 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "./Main";
-import Login from "./Login";
-import Home from "./Home";
 import AddToys from "./AddToys";
-import Blog from "./Blog";
-import Error from "./Error";
-import Register from "./Register";
-import SingleDetails from "./SingleDetails";
 import AllToys from "./AllToys";
+import Blog from "./Blog";
+import Edit from "./Edit";
+import Error from "./Error";
+import Home from "./Home";
+import Login from "./Login";
+import Main from "./Main";
 import MyToys from "./MyToys";
 import PrivateRouter from "./PrivateRouter";
-import Edit from "./Edit";
+import Register from "./Register";
+import SingleDetails from "./SingleDetails";
 
 const router = createBrowserRouter([
     {
@@ -38,12 +38,12 @@ const router = createBrowserRouter([
             {
                 path: '/singleData/:id',
                 element: <SingleDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/addtoys/${params.id}`)
+                loader: ({ params }) => fetch(`https://dolls-toy-server-three.vercel.app/addtoys/${params.id}`)
             },
             {
                 path: '/alltoys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/addtoys')
+                loader: () => fetch('https://dolls-toy-server-three.vercel.app/addtoys')
             },
             {
                 path: '/mytoys',
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             {
                 path:'/edit/:id',
                 element:<Edit/>,
-                loader:({params})=>fetch(`http://localhost:5000/addtoys/${params.id}`)
+                loader:({params})=>fetch(`https://dolls-toy-server-three.vercel.app/addtoys/${params.id}`)
             },
             {
                 path: 'blogs',

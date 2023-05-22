@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from './AuthProvider';
 import { Container, Table } from 'react-bootstrap';
+import { AuthContext } from './AuthProvider';
 
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const MyToys = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys/${user?.email}`)
+        fetch(`https://dolls-toy-server-three.vercel.app/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => setMytoys(data))
     }, [user?.email, mytoys,navigate])
@@ -18,7 +18,7 @@ const MyToys = () => {
     const handleDelete =(_id)=>{
         const deletedData = confirm('Are You Sure You wantes Delete!!')
         if(deletedData ){
-            fetch(`http://localhost:5000/addtoys/${_id}`, {
+            fetch(`https://dolls-toy-server-three.vercel.app/addtoys/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

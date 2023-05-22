@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Category = () => {
   const [activeTab, setActiveTab] = useState('barbie');
   const [alldata, setAlldata] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/addtoys')
+    fetch('https://dolls-toy-server-three.vercel.app/addtoys')
       .then(res => res.json())
       .then(data => setAlldata(data))
   }, [])
