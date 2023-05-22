@@ -5,7 +5,7 @@ import './Banner.css'
 const Banner = () => {
     return (
         <div>
-           <Container>
+           <Container fluid>
       <Carousel>
         <Carousel.Item>
           <div className="position-relative">

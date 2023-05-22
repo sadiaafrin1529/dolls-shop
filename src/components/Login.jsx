@@ -55,9 +55,9 @@ console.log(user)
 
               </div>
             </Form>
-              <h6>Please Create acount<Link to="/reg">Register</Link></h6>
+              <h6 className='mb-3 mt-3 text-center'>Please Create acount<Link to="/reg">Register</Link></h6>
              
-              <Button onClick={()=>GoogleSignIn()} className="outline-primary rounded-circle ">G</Button>
+              <div className='text-center'><Button onClick={()=>GoogleSignIn()} className="outline-primary rounded-circle ">G</Button></div>
           </Col>
         </Row>
       </Container>

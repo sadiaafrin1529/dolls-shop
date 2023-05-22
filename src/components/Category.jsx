@@ -15,9 +15,9 @@ const Category = () => {
     <Container>
       <Row>
         <Col>
-          <Button onClick={()=>setActiveTab('barbie')}  variant="primary">barbie</Button >
-          <Button onClick={()=>setActiveTab('baby dolls')}  variant="primary">baby dolls</Button >
-          <Button onClick={()=>setActiveTab('American girl')}  variant="primary">American girl</Button >
+          <div className='text-center'><Button onClick={()=>setActiveTab('barbie')} className='btn btn-secondary'>barbie</Button >
+          <Button onClick={()=>setActiveTab('baby dolls')} className='btn btn-secondary'>baby dolls</Button >
+          <Button onClick={()=>setActiveTab('American girl')}  className='btn btn-secondary'>American girl</Button ></div>
         </Col>
       </Row>
       <Row>
@@ -30,14 +30,14 @@ const Category = () => {
             <Card className='mt-5 mb-5'>
               <Card.Img style={{ width: '300px', height: '300px' }} className='img-fluid' variant="top" src={acTab.img} />
               <Card.Body className='rounded '>
-                <Card.Title>{acTab.rating}</Card.Title>
+                <Card.Title><i class="fa-solid fa-star text-warning "></i>{acTab.rating}</Card.Title>
                 <Card.Text>
                   {acTab.name}
                 </Card.Text>
                 <Card.Text>
                   {acTab.price}
                 </Card.Text>
-                <Button variant="primary"><Link style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to={`/singleData/${acTab._id}`}>View details</Link></Button>
+                <Button className='btn btn-secondary'><Link style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to={`/singleData/${acTab._id}`}>View details</Link></Button>
               </Card.Body>
             </Card>
           </Col>
