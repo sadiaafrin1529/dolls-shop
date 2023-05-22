@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Container,  Row, Col } from 'react-bootstrap';
 const SingleDetails = () => {
-    const loader = useLoaderData()
-    const {_id,img,name,sellername,email,price,quantity,rating,description,category
-
-    }= loader
-    console.log(loader)
+  const loader = useLoaderData()
+  
+    const {_id,img,name,sellername,email,price,quantity,rating,description,category}= loader;
+    
     return (
         <div>
             <Container >

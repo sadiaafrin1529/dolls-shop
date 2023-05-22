@@ -9,17 +9,18 @@ import Register from "./Register";
 import SingleDetails from "./SingleDetails";
 import AllToys from "./AllToys";
 import MyToys from "./MyToys";
+import PrivateRouter from "./PrivateRouter";
+import Edit from "./Edit";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
         errorElement: <Error></Error>,
-        children: [
+        _children: [
             {
                 path: '/',
                 element: <Home />
-
             },
             {
                 path: 'login',
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'addtoys',
-                element: <AddToys />
+                element: <PrivateRouter><AddToys/></PrivateRouter>
             },
             {
                 path: 'blogs',
@@ -40,21 +41,29 @@ const router = createBrowserRouter([
             {
                 path: '/singleData/:id',
                 element: <SingleDetails />,
+                loader: ({ params }) => fetch(`http://localhost:5000/addtoys/${params.id}`)
+            },
+            {
+                path: '/alltoys',
+                element: <AllToys></AllToys>,
+                loader: () => fetch('http://localhost:5000/addtoys')
+            },
+            {
+                path: '/mytoys',
+                element: <MyToys />
+            },
+            {
+                path:'/edit/:id',
+                element:<Edit/>,
                 loader:({params})=>fetch(`http://localhost:5000/addtoys/${params.id}`)
-            },
-            {
-                path:'/alltoys',
-                element:<AllToys></AllToys>,
-                loader:()=>fetch('http://localhost:5000/addtoys')
-                
-            },
-            {
-                path:'/mytoys',
-                element:<MyToys/>
             }
-
-
-        ]
+        ],
+        get children() {
+            return this._children;
+        },
+        set children(value) {
+            this._children = value;
+        },
     },
 
 ])

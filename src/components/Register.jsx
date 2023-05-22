@@ -17,16 +17,16 @@ const Register = () => {
 
   const formHandler = e =>{
     e.preventDefault()
-    if(updated.password !== updated.confirmPassword){
-      // alert('password did not matched')
-      Swal.fire({
-        title: 'Error!',
-        text: 'password did not matched',
-        icon: 'error',
-        confirmButtonText: 'OK'
-      })
-      return 
-    }
+    // if(updated.password !== updated.confirmPassword){
+    //   // alert('password did not matched')
+    //   Swal.fire({
+    //     title: 'Error!',
+    //     text: 'password did not matched',
+    //     icon: 'error',
+    //     confirmButtonText: 'OK'
+    //   })
+    //   return 
+    // }
     registration(updated.email,updated.password,updated.name,updated.photo)
   }
     return (
