@@ -31,7 +31,7 @@ const AllToys = () => {
                             {lod.email}</td>
                             <td><h6>${lod.price}</h6>
                             {lod.quantity}</td>
-                            <td><Button><Link style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to={`/mytoys/${_id}`}>Login to view Details</Link></Button></td>
+                            <td><Button><Link style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to={`/singleData/${lod._id}`}> Details</Link></Button></td>
                         </tr>
                     </tbody>)
                 }

@@ -29,6 +29,7 @@ const NavBar = () => {
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/'>Home</Link>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/alltoys'>All Toys</Link>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='addtoys'>Add Toys</Link>
+                                        <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/mytoys'>My Toys</Link>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='blogs' >Blogs</Link>
 
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='blogs' >

@@ -79,7 +79,7 @@ setUsers(newUsers);
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEmail">
 
-            <Form.Control onChange={onChangeHandler} type="email" name='email' placeholder="Email" />
+            <Form.Control onChange={onChangeHandler} type="email" name='email' value={user?.email} placeholder="Email" />
           </Form.Group>
 
           <Form.Group  as={Col} controlId="formGridState">
