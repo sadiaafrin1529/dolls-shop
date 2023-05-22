@@ -32,10 +32,10 @@ const Category = () => {
               <Card.Body className='rounded '>
                 <Card.Title><i class="fa-solid fa-star text-warning "></i>{acTab.rating}</Card.Title>
                 <Card.Text>
-                  {acTab.name}
+                <i class="fa-solid fa-file-signature"></i> {acTab.name}
                 </Card.Text>
                 <Card.Text>
-                  {acTab.price}
+                <i class="fa-sharp fa-solid fa-tag"></i> {acTab.price}
                 </Card.Text>
                 <Button className='btn btn-secondary'><Link style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to={`/singleData/${acTab._id}`}>View details</Link></Button>
               </Card.Body>
