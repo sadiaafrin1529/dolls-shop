@@ -2,17 +2,18 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './AuthProvider';
 import { Container, Table } from 'react-bootstrap';
 import MyToy from './MyToy';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MyToys = () => {
     const [mytoys, setMytoys] = useState([])
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch(`http://localhost:5000/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => setMytoys(data))
-    }, [user?.email, mytoys])
+    }, [user?.email, mytoys,navigate])
 
     const handleDelete =(_id)=>{
         const deletedData = confirm('Are You Sure You wantes Delete!!')

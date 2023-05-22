@@ -1,11 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import loginn from '../assets/imgs/login.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 const Login = () => {
   const { login,error,user ,GoogleSignIn} = useContext(AuthContext)
   const [updated, setUpdated] = useState({})
+  const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+
+
+
   const hanldeChanged = e => {
     const field = e.target.name;
     const value = e.target.value;
@@ -16,6 +23,7 @@ const Login = () => {
   const handleForm = e => {
     e.preventDefault()
     login(updated.email, updated.password)
+    navigate(from, { replace: true })
 
   }
 console.log(user)

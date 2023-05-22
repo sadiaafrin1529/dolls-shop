@@ -11,30 +11,21 @@ const Banner = () => {
           <div className="position-relative">
             <div className="gradient-overlay"></div>
             <img src={banner1} alt="Slider 1" className="d-block w-100" />
-            <Carousel.Caption className="text-end">
-              <h3>Slide 1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+           
           </div>
         </Carousel.Item>
         <Carousel.Item>
           <div className="position-relative">
             <div className="gradient-overlay"></div>
             <img src={banner1} alt="Slider 2" className="d-block w-100" />
-            <Carousel.Caption className="text-end">
-              <h3>Slide 2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+            
           </div>
         </Carousel.Item>
         <Carousel.Item>
           <div className="position-relative">
             <div className="gradient-overlay"></div>
             <img src={banner1} alt="Slider 3" className="d-block w-100" />
-            <Carousel.Caption className="text-end">
-              <h3>Slide 3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+            
           </div>
         </Carousel.Item>
       </Carousel>

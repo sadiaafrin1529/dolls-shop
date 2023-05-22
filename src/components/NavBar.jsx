@@ -5,7 +5,7 @@ import logo from '../assets/imgs/logo1.png'
 import { AuthContext } from './AuthProvider';
 
 const NavBar = () => {
-    const {user,logout}= useContext(AuthContext)
+    const { user, logout } = useContext(AuthContext)
     const photo = user?.photoURL
     return (
         <div className='mx-auto'>
@@ -14,11 +14,11 @@ const NavBar = () => {
                     <Col>
                         <Navbar bg="secondary" expand="md" variant="dark">
                             <Container>
-                            <Col md={6}>
-          <Image src={logo} alt="Login Image" className="img-fluid" style={{ width: '100px', height: '100px' }} />
-        </Col>
-                                <Navbar.Brand className='text-5xl'  href="#" style={{ marginRight: '20px', fontWeight:'20px' }}><h5>Dolls Shop</h5></Navbar.Brand>
-                                
+                                <Col md={6}>
+                                    <Image src={logo} alt="Login Image" className="img-fluid" style={{ width: '100px', height: '100px' }} />
+                                </Col>
+                                <Navbar.Brand className='text-5xl' href="#" style={{ marginRight: '20px', fontWeight: '20px' }}><h5>Dolls Shop</h5></Navbar.Brand>
+
                                 <Navbar.Toggle aria-controls="navbar-nav" />
                                 <Navbar.Collapse id="navbar-nav">
                                     <Nav className="me-auto">
@@ -28,18 +28,26 @@ const NavBar = () => {
                                     <Nav>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/'>Home</Link>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/alltoys'>All Toys</Link>
-                                        <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='addtoys'>Add Toys</Link>
-                                        <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/mytoys'>My Toys</Link>
+                                        
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='blogs' >Blogs</Link>
 
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='blogs' >
-                                            {user ? <h6 onClick={()=>logout()}>LogOut</h6>:
-                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='login'>Login</Link>}
-                                         </Link>
+                                            
+                                            {user?.email ? <>
+                                                <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='addtoys'>Add Toys</Link>
+                                                <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/mytoys'>My Toys</Link>
+                                                
+                                                <button onClick={()=>logout()} class="btn btn-secondary" type="submit">LogOut</button>
+                                                
+                                                
+                                            </> :
+                                            <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='login'>Login</Link>
+                                         }
+                                        </Link>
 
-                                         <Link to=''>{user  && <div className='size_of_img' >
-                                        <img  src={photo} title={user?.displayName} id="t-4" style={{width:'30px',height:'30px',borderRadius:'50%'}} alt="" />
-                                    </div>}</Link>
+                                        <Link to=''>{user && <div className='size_of_img' >
+                                            <img src={photo} title={user?.displayName} id="t-4" style={{ width: '30px', height: '30px', borderRadius: '50%' }} alt="" />
+                                        </div>}</Link>
 
                                     </Nav>
                                 </Navbar.Collapse>
@@ -53,3 +61,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+

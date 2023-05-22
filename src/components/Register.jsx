@@ -41,6 +41,10 @@ const Register = () => {
           <h1 className="text-center mt-5">Registration</h1>
           <Form onSubmit={formHandler} className="mt-5">
             <Form.Group controlId="formBasicEmail">
+              <Form.Label>Photo</Form.Label>
+              <Form.Control onChange={onChangeHandler} type="photo" name='photo' placeholder="photoURL" />
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
               <Form.Label>Name</Form.Label>
               <Form.Control onChange={onChangeHandler} type="name" name='name' placeholder="Name" />
             </Form.Group>
@@ -62,8 +66,8 @@ const Register = () => {
       
     </div>
           </Form>
-    <h6 className='mb-3 mt-2'>Already have an acount?  <Link to="/login">Login</Link></h6>
-    <Button onClick={()=>GoogleSignIn()} className="outline-primary rounded-circle ">G</Button>
+    <h6 className='mb-3  mt-2 text-center'>Already have an acount?  <Link to="/login">Login</Link></h6>
+    <div className='text-center'><Button onClick={()=>GoogleSignIn()} className="outline-primary rounded-circle mb-3 mt-2 text-center ">G</Button></div>
         </Col>
       </Row>
     </Container>
