@@ -37,7 +37,7 @@ const NavBar = () => {
                                                 <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='addtoys'>Add Toys</Link>
                                                 <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/mytoys'>My Toys</Link>
                                                 
-                                                <button onClick={()=>logout()} class="btn btn-secondary" type="submit">LogOut</button>
+                                                <Link to='/' onClick={()=>logout()} class="btn btn-secondary" type="submit">LogOut</Link>
                                                 
                                                 
                                             </> :

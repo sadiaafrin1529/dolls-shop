@@ -24,6 +24,7 @@ const Login = () => {
     e.preventDefault()
     login(updated.email, updated.password)
     navigate(from, { replace: true })
+   
 
   }
 console.log(user)

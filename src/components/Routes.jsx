@@ -30,10 +30,7 @@ const router = createBrowserRouter([
                 path: 'addtoys',
                 element: <PrivateRouter><AddToys/></PrivateRouter>
             },
-            {
-                path: 'blogs',
-                element: <Blog></Blog>
-            },
+            
             {
                 path: '/reg',
                 element: <Register></Register>
@@ -56,7 +53,11 @@ const router = createBrowserRouter([
                 path:'/edit/:id',
                 element:<Edit/>,
                 loader:({params})=>fetch(`http://localhost:5000/addtoys/${params.id}`)
-            }
+            },
+            {
+                path: 'blogs',
+                element: <Blog></Blog>
+            },
         ],
         get children() {
             return this._children;

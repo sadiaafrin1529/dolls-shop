@@ -68,7 +68,7 @@ if (data.insertedId) {
       confirmButtonText: 'OK'
     })
 }
-// form.reset();
+form.reset();
 })
 }
 
