@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './AuthProvider';
 import { Container, Table } from 'react-bootstrap';
-import MyToy from './MyToy';
+
 import { Link, useNavigate } from 'react-router-dom';
 
 const MyToys = () => {
