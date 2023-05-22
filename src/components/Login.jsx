@@ -4,7 +4,7 @@ import loginn from '../assets/imgs/login.png'
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 const Login = () => {
-  const { login,error,user } = useContext(AuthContext)
+  const { login,error,user ,GoogleSignIn} = useContext(AuthContext)
   const [updated, setUpdated] = useState({})
   const hanldeChanged = e => {
     const field = e.target.name;
@@ -46,8 +46,10 @@ console.log(user)
 
 
               </div>
-              <h6>Please Create acount<Link to="/reg">Register</Link></h6>
             </Form>
+              <h6>Please Create acount<Link to="/reg">Register</Link></h6>
+             
+              <Button onClick={()=>GoogleSignIn()} className="outline-primary rounded-circle ">G</Button>
           </Col>
         </Row>
       </Container>

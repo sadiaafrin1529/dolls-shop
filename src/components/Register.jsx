@@ -3,8 +3,9 @@ import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import login from '../assets/imgs/login.png'
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import Swal from 'sweetalert2';
 const Register = () => {
-  const {registration,error}= useContext(AuthContext)
+  const {registration,error,GoogleSignIn}= useContext(AuthContext)
   const [updated ,setUpdated]= useState({})
   const onChangeHandler=e=>{
     const field = e.target.name;
@@ -16,6 +17,16 @@ const Register = () => {
 
   const formHandler = e =>{
     e.preventDefault()
+    if(updated.password !== updated.confirmPassword){
+      // alert('password did not matched')
+      Swal.fire({
+        title: 'Error!',
+        text: 'password did not matched',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
+      return 
+    }
     registration(updated.email,updated.password,updated.name,updated.photo)
   }
     return (
@@ -50,8 +61,9 @@ const Register = () => {
       
       
     </div>
-    <h6 className='mb-5 mt-2'>Already have an acount?  <Link to="/login">Login</Link></h6>
           </Form>
+    <h6 className='mb-3 mt-2'>Already have an acount?  <Link to="/login">Login</Link></h6>
+    <Button onClick={()=>GoogleSignIn()} className="outline-primary rounded-circle ">G</Button>
         </Col>
       </Row>
     </Container>

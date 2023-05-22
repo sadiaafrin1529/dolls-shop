@@ -6,12 +6,14 @@ import AddToys from "./AddToys";
 import Blog from "./Blog";
 import Error from "./Error";
 import Register from "./Register";
+import SingleDetails from "./SingleDetails";
+import AllToys from "./AllToys";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
-        errorElement:<Error></Error>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -23,20 +25,31 @@ const router = createBrowserRouter([
                 element: <Login />
             },
             {
-                path:'addtoys',
-                element:<AddToys/>
+                path: 'addtoys',
+                element: <AddToys />
             },
             {
-              path:'blogs',
-              element:<Blog></Blog>
+                path: 'blogs',
+                element: <Blog></Blog>
             },
             {
-                path:'/reg',
-                element:<Register></Register>
+                path: '/reg',
+                element: <Register></Register>
             },
-           
+            {
+                path: '/singleData/:id',
+                element: <SingleDetails />,
+                loader:({params})=>fetch(`http://localhost:5000/addtoys/${params.id}`)
+            },
+            {
+                path:'/alltoys',
+                element:<AllToys></AllToys>,
+                loader:()=>fetch('http://localhost:5000/addtoys')
+                
+            }
+
         ]
     },
-    
+
 ])
 export default router;

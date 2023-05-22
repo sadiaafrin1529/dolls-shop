@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Col, Container, Image, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../assets/imgs/logo1.png'
+import { AuthContext } from './AuthProvider';
 
 const NavBar = () => {
+    const {user,logout}= useContext(AuthContext)
+    const photo = user?.photoURL
     return (
         <div className='mx-auto'>
             <Container fluid  >
@@ -24,10 +27,18 @@ const NavBar = () => {
                                     </Nav>
                                     <Nav>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/'>Home</Link>
-                                        <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to=''>All Toys</Link>
+                                        <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='/alltoys'>All Toys</Link>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='addtoys'>Add Toys</Link>
                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='blogs' >Blogs</Link>
-                                        <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='login' >Login</Link>
+
+                                        <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='blogs' >
+                                            {user ? <h6 onClick={()=>logout()}>LogOut</h6>:
+                                         <Link className='mx-2' style={{ color: 'white', textDecoration: 'none', fontWeight: '600' }} to='login'>Login</Link>}
+                                         </Link>
+
+                                         <Link to=''>{user  && <div className='size_of_img' >
+                                        <img  src={photo} title={user?.displayName} id="t-4" style={{width:'30px',height:'30px',borderRadius:'50%'}} alt="" />
+                                    </div>}</Link>
 
                                     </Nav>
                                 </Navbar.Collapse>
