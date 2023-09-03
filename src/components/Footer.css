@@ -1,0 +1,12 @@
+.footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background:linear-gradient(hsla(215, 37%, 56%, 0.718),#0066ffb7),url(../assets/imgs/svg.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover; 
+}
+.footerBotton{
+    background-color: transparent;
+    color: black!important;
+}
